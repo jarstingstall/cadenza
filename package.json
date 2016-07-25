@@ -1,0 +1,21 @@
+{
+  "name": "cadenza",
+  "version": "0.1.0",
+  "description": "A javascript library for generating harmony and chord voicings for all harmonic musical instruments",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "music",
+    "theory",
+    "harmony",
+    "chords"
+  ],
+  "author": "John Arstingstall",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
