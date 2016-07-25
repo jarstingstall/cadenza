@@ -128,4 +128,11 @@ describe('chord', () => {
             assert.equal(instance.fifth, 'A');
         });
     });
+
+    describe('notes', () => {
+        it('should return a list of all notes in a triad', () => {
+            let notes = chord('C').major().notes();
+            assert.deepEqual(notes, ['C', 'E', 'G']);
+        });
+    });
 });

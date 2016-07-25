@@ -39,6 +39,10 @@ class Chord {
 
         return this;
     }
+
+    notes() {
+        return [this.root, this.third, this.fifth];
+    }
 }
 
 module.exports = function(root) {

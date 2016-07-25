@@ -30,6 +30,11 @@ chord('C').diminished(); // {root: 'C', third: 'Eb', fifth: 'Gb'}
 chord('C').augmented(); // {root: 'C', third: 'E', fifth: 'G#'}
 ```
 
+#### notes
+```
+chord('C').major().notes(); // ['C','E','G']
+```
+
 ### interval
 The `interval` function is a factory function for creating new `Interval` instances. It takes one argument, the starting note, or bottom note of the interval.
 ```
