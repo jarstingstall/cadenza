@@ -129,10 +129,41 @@ describe('chord', () => {
         });
     });
 
+    describe('maj7', () => {
+        it('should set the notes of a Cmaj7 chord', () => {
+            let instance = chord('C').maj7();
+            assert.equal(instance.root, 'C');
+            assert.equal(instance.third, 'E');
+            assert.equal(instance.fifth, 'G');
+            assert.equal(instance.seventh, 'B');
+        });
+
+        it('should set the notes of a C#maj7 chord', () => {
+            let instance = chord('C#').maj7();
+            assert.equal(instance.root, 'C#');
+            assert.equal(instance.third, 'E#');
+            assert.equal(instance.fifth, 'G#');
+            assert.equal(instance.seventh, 'B#');
+        });
+
+        it('should set the notes of a Dbmaj7 chord', () => {
+            let instance = chord('Db').maj7();
+            assert.equal(instance.root, 'Db');
+            assert.equal(instance.third, 'F');
+            assert.equal(instance.fifth, 'Ab');
+            assert.equal(instance.seventh, 'C');
+        });
+    });
+
     describe('notes', () => {
         it('should return a list of all notes in a triad', () => {
             let notes = chord('C').major().notes();
             assert.deepEqual(notes, ['C', 'E', 'G']);
+        });
+
+        it('should return a list of all notes in a seventh chord', () => {
+            let notes = chord('C').maj7().notes();
+            assert.deepEqual(notes, ['C', 'E', 'G', 'B']);
         });
     });
 });

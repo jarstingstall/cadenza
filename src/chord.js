@@ -40,8 +40,17 @@ class Chord {
         return this;
     }
 
+    maj7() {
+        this.major();
+        this.seventh = interval(this.fifth).majorThird();
+
+        return this;
+    }
+
     notes() {
-        return [this.root, this.third, this.fifth];
+        var notes = [this.root, this.third, this.fifth];
+        if (typeof this.seventh != 'undefined') notes.push(this.seventh);
+        return notes;
     }
 }
 

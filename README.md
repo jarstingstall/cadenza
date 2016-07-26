@@ -9,7 +9,6 @@ var chord = require('cadenza').chord;
 var myChord = chord('C');
 ```
 
-### Chord
 #### major
 ```
 chord('C').major(); // {root: 'C', third: 'E', fifth: 'G'}
@@ -30,6 +29,11 @@ chord('C').diminished(); // {root: 'C', third: 'Eb', fifth: 'Gb'}
 chord('C').augmented(); // {root: 'C', third: 'E', fifth: 'G#'}
 ```
 
+#### maj7
+```
+chord('C').maj7(); // {root: 'C', third: 'E', fifth: 'G#', seventh: 'B'}
+```
+
 #### notes
 ```
 chord('C').major().notes(); // ['C','E','G']
@@ -42,7 +46,6 @@ var interval = require('cadenza').interval;
 var myInterval = interval('C');
 ```
 
-### Interval
 #### majorThird
 ```
 interval('C').majorThird(); // 'E'
