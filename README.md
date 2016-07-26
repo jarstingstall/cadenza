@@ -31,7 +31,12 @@ chord('C').augmented(); // {root: 'C', third: 'E', fifth: 'G#'}
 
 #### maj7
 ```
-chord('C').maj7(); // {root: 'C', third: 'E', fifth: 'G#', seventh: 'B'}
+chord('C').maj7(); // {root: 'C', third: 'E', fifth: 'G', seventh: 'B'}
+```
+
+#### min7
+```
+chord('C').min7(); // {root: 'C', third: 'Eb', fifth: 'G', seventh: 'Bb'}
 ```
 
 #### notes
