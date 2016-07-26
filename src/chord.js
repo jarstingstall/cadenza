@@ -53,6 +53,12 @@ class Chord {
         return this;
     }
 
+    dom7() {
+        this.major();
+        this.seventh = interval(this.fifth).minorThird();
+        return this;
+    }
+
     notes() {
         var notes = [this.root, this.third, this.fifth];
         if (typeof this.seventh != 'undefined') notes.push(this.seventh);
