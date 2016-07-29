@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-let letters = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-let notes = [['B#', 'C'], ['C#', 'Db'], 'D', ['D#', 'Eb'], ['E', 'Fb'], ['E#', 'F'], ['F#', 'Gb'], 'G', ['G#', 'Ab'], 'A', ['A#', 'Bb'], ['B', 'Cb']];
+let letters = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+let notes = [['B#', 'C'], ['C#', 'Db'], 'D', ['D#', 'Eb'], ['E', 'Fb'], ['E#', 'F'], ['F#', 'Gb'], 'G', ['G#', 'Ab'], 'A', ['A#', 'Bb'], ['B', 'Cb']]
 
 /**
  *
@@ -11,55 +11,55 @@ let notes = [['B#', 'C'], ['C#', 'Db'], 'D', ['D#', 'Eb'], ['E', 'Fb'], ['E#', '
  * @returns {string}
  */
 let getTargetNote = (root, semiTones, steps) => {
-    let rootIndex = '';
+    let rootIndex = ''
     notes.forEach((note, i) => {
         if (Array.isArray(note)) {
             if (note.indexOf(root) != -1) {
-                rootIndex = i;
+                rootIndex = i
             }
         } else if (note == root) {
-            rootIndex = i;
+            rootIndex = i
         }
-    });
+    })
 
-    let index = rootIndex + semiTones;
+    let index = rootIndex + semiTones
     if (index > notes.length - 1) {
-        index = index - notes.length;
+        index = index - notes.length
     }
-    let note = notes[index];
+    let note = notes[index]
 
     if (Array.isArray(note)) {
-        return getProperAccidental(root, note, steps);
+        return getProperAccidental(root, note, steps)
     } else {
-        return note;
+        return note
     }
-};
+}
 
 let getProperAccidental = (root, note, steps) => {
-    let index = letters.indexOf(root.charAt(0)) + steps;
+    let index = letters.indexOf(root.charAt(0)) + steps
     if (index > letters.length - 1) {
-        index = index - letters.length;
+        index = index - letters.length
     }
-    let letter = letters[index];
+    let letter = letters[index]
     return note.filter(note => {
-        return note.charAt(0) === letter;
-    })[0];
-};
+        return note.charAt(0) === letter
+    })[0]
+}
 
 class Interval {
     constructor(root) {
-        this.root = root;
+        this.root = root
     }
 
     minorThird() {
-        return getTargetNote(this.root, 3, 2);
+        return getTargetNote(this.root, 3, 2)
     }
 
     majorThird() {
-        return getTargetNote(this.root, 4, 2);
+        return getTargetNote(this.root, 4, 2)
     }
 }
 
 module.exports = function(root) {
-    return new Interval(root);
-};
+    return new Interval(root)
+}
