@@ -65,6 +65,12 @@ class Chord {
         return this
     }
 
+    minMaj7() {
+        this.minor()
+        this.seventh = interval(this.fifth).majorThird()
+        return this
+    }
+
     notes() {
         var notes = [this.root, this.third, this.fifth]
         if (typeof this.seventh != 'undefined') notes.push(this.seventh)

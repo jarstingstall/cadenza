@@ -233,6 +233,29 @@ describe('chord', () => {
         })
     })
 
+    describe('minMaj7', () => {
+        it('should set the notes of a CminMaj7 chord', () => {
+            let instance = chord('C').minMaj7()
+            assert.equal(instance.root, 'C')
+            assert.equal(instance.third, 'Eb')
+            assert.equal(instance.fifth, 'G')
+            assert.equal(instance.seventh, 'B')
+        })
+        it('should set the notes of a C#minMaj7 chord', () => {
+            let instance = chord('C#').minMaj7()
+            assert.equal(instance.root, 'C#')
+            assert.equal(instance.third, 'E')
+            assert.equal(instance.fifth, 'G#')
+            assert.equal(instance.seventh, 'B#')
+        })
+        it('should set the notes of a DbminMaj7 chord', () => {
+            let instance = chord('Db').minMaj7()
+            assert.equal(instance.root, 'Db')
+            assert.equal(instance.third, 'Fb')
+            assert.equal(instance.fifth, 'Ab')
+            assert.equal(instance.seventh, 'C')
+        })
+    })
     describe('notes', () => {
         it('should return a list of all notes in a triad', () => {
             let notes = chord('C').major().notes()

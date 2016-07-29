@@ -49,6 +49,11 @@ chord('C').dom7(); // {root: 'C', third: 'E', fifth: 'G', seventh: 'Bb'}
 chord('C').min7b5(); // {root: 'C', third: 'Eb', fifth: 'Gb', seventh: 'Bb'}
 ```
 
+#### minMaj7
+```
+chord('C').minMaj7(); // {root: 'C', third: 'Eb', fifth: 'G', seventh: 'B'}
+```
+
 #### notes
 ```
 chord('C').major().notes(); // ['C','E','G']
