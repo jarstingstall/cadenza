@@ -1,7 +1,7 @@
 'use strict'
 
 let interval = require('./interval')
-let allowedRoots = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B', 'Cb']
+let allowedRoots = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'E#', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B', 'Cb']
 
 class Chord {
     constructor(root) {
@@ -15,35 +15,30 @@ class Chord {
     major() {
         this.third = interval(this.root).majorThird()
         this.fifth = interval(this.third).minorThird()
-
         return this
     }
 
     minor() {
         this.third = interval(this.root).minorThird()
         this.fifth = interval(this.third).majorThird()
-
         return this
     }
 
     diminished() {
         this.third = interval(this.root).minorThird()
         this.fifth = interval(this.third).minorThird()
-
         return this
     }
 
     augmented() {
         this.third = interval(this.root).majorThird()
         this.fifth = interval(this.third).majorThird()
-
         return this
     }
 
     maj7() {
         this.major()
         this.seventh = interval(this.fifth).majorThird()
-
         return this
     }
 
@@ -77,6 +72,12 @@ class Chord {
         return this
     }
 
+    dim7() {
+        this.diminished()
+        this.seventh = interval(this.fifth).minorThird()
+        return this
+    }
+
     notes() {
         var notes = [this.root, this.third, this.fifth]
         if (typeof this.seventh != 'undefined') notes.push(this.seventh)
@@ -84,6 +85,6 @@ class Chord {
     }
 }
 
-module.exports = function(root) {
+module.exports = root => {
     return new Chord(root)
 }

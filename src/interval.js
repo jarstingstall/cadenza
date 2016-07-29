@@ -60,6 +60,6 @@ class Interval {
     }
 }
 
-module.exports = function(root) {
+module.exports = root => {
     return new Interval(root)
 }

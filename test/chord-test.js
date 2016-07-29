@@ -281,6 +281,23 @@ describe('chord', () => {
         })
     })
 
+    describe('dim7', () => {
+        it('should set the notes of a C#dim7 chord', () => {
+            let instance = chord('C#').dim7()
+            assert.equal(instance.root, 'C#')
+            assert.equal(instance.third, 'E')
+            assert.equal(instance.fifth, 'G')
+            assert.equal(instance.seventh, 'Bb')
+        })
+        it('should set the notes of a E#dim7 chord', () => {
+            let instance = chord('E#').dim7()
+            assert.equal(instance.root, 'E#')
+            assert.equal(instance.third, 'G#')
+            assert.equal(instance.fifth, 'B')
+            assert.equal(instance.seventh, 'D')
+        })
+    })
+
     describe('notes', () => {
         it('should return a list of all notes in a triad', () => {
             let notes = chord('C').major().notes()
