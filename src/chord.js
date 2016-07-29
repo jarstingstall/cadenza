@@ -1,7 +1,7 @@
 'use strict';
 
 let interval = require('./interval');
-let allowedRoots = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'Bb', 'B', 'Cb'];
+let allowedRoots = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B', 'Cb'];
 
 class Chord {
     constructor(root) {
@@ -56,6 +56,12 @@ class Chord {
     dom7() {
         this.major();
         this.seventh = interval(this.fifth).minorThird();
+        return this;
+    }
+
+    min7b5() {
+        this.diminished();
+        this.seventh = interval(this.fifth).majorThird();
         return this;
     }
 
