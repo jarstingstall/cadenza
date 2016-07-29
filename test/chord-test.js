@@ -256,6 +256,31 @@ describe('chord', () => {
             assert.equal(instance.seventh, 'C')
         })
     })
+
+    describe('maj7#5', () => {
+        it('should set the notes of a Cmaj7#5 chord', () => {
+            let instance = chord('C')['maj7#5']()
+            assert.equal(instance.root, 'C')
+            assert.equal(instance.third, 'E')
+            assert.equal(instance.fifth, 'G#')
+            assert.equal(instance.seventh, 'B')
+        })
+        it('should set the notes of a Dbmaj7#5 chord', () => {
+            let instance = chord('Db')['maj7#5']()
+            assert.equal(instance.root, 'Db')
+            assert.equal(instance.third, 'F')
+            assert.equal(instance.fifth, 'A')
+            assert.equal(instance.seventh, 'C')
+        })
+        it('should set the notes of a Dmaj7#5 chord', () => {
+            let instance = chord('D')['maj7#5']()
+            assert.equal(instance.root, 'D')
+            assert.equal(instance.third, 'F#')
+            assert.equal(instance.fifth, 'A#')
+            assert.equal(instance.seventh, 'C#')
+        })
+    })
+
     describe('notes', () => {
         it('should return a list of all notes in a triad', () => {
             let notes = chord('C').major().notes()
